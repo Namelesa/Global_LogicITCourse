@@ -1,7 +1,12 @@
 namespace Evenza.Domain.Category;
 
-public class Category
+public enum Category
 {
-    public Guid Id { get; set; }
-    public string Name { get; set; }
+    Training = 1,
+    Workshop = 2,
+    Teambuilding = 3,
+    Afterwork = 4,
+    Presentation = 5,
+    Demo = 6,
+    Culture = 7,
 }
