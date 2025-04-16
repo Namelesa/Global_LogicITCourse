@@ -23,7 +23,7 @@ public class Event
     public virtual User.User Author { get; set; }
     public int UserCounter { get; set; }
 
-    public IReadOnlyCollection<User.User> Users => _participates.AsReadOnly();
+    public IReadOnlyCollection<User.User> Participates => _participates.AsReadOnly();
     
     public DateTime StartTime { get; set; }
     
@@ -45,7 +45,7 @@ public class Event
             return;
         
         _participates.Add(user);
-        UserCounter++;
+        UserCounter--;
     }
     
     public void RemoveUser(User.User user)
@@ -54,7 +54,7 @@ public class Event
             return;
         
         _participates.Remove(user);
-        UserCounter--;
+        UserCounter++;
     }
     
     public void Update(string eventName, string description, DateTime startTime, DateTime endTime, Category.Category category)
